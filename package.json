@@ -1,0 +1,36 @@
+{
+  "name": "cordova-plugin-play-games-services",
+  "version": "1.1.0",
+  "description": "Google Play Games Services Cordova Plugin for Android",
+  "cordova": {
+    "id": "cordova-plugin-play-games-services",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artberri/cordova-plugin-play-games-services.git"
+  },
+  "bugs": {
+    "url": "https://github.com/artberri/cordova-plugin-play-games-services/issues"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova",
+    "google",
+    "play",
+    "games",
+    "services",
+    "android",
+    "users",
+    "leaderboard",
+    "achievements"
+  ],
+  "author": {
+    "name": "Alberto Varela",
+    "email": "alberto@berriart.com"
+  },
+  "license": "MIT"
+}

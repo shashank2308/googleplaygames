@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-play-games-services"
+    version="1.1.0">
+    
+    <name>PlayGamesServices</name>
+    <description>Google Play Games Services Cordova Plugin</description>
+    <author>Alberto Varela</author>
+    <license>MIT</license>
+    <keywords>google, play, game, cordova, android</keywords>
+    <repo>https://github.com/artberri/cordova-plugin-play-games-services.git</repo>
+    <issue>https://github.com/artberri/cordova-plugin-play-games-services/issues</issue>
+    
+    <engines>
+        <engine name="cordova" version=">=4.0.0" />
+    </engines>
+    
+    <js-module src="www/play-games-services.js" name="PlayGamesServices">
+        <clobbers target="window.plugins.playGamesServices" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <framework src="com.google.android.gms:play-services-games:25.0.0" />
+        <framework src="com.google.android.gms:play-services-plus:25.0.0" />
+        
+        <preference name="APP_ID" />
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PlayGamesServices">
+                <param name="android-package" value="com.berriart.cordova.plugins.PlayGamesServices"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="app_id">$APP_ID</string>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
+        
+        <source-file src="src/com/berriart/cordova/plugins/PlayGamesServices.java" target-dir="src/com/berriart/cordova/plugins/" />
+        <source-file src="src/com/berriart/cordova/plugins/BaseGameUtils.java" target-dir="src/com/berriart/cordova/plugins/" />
+        <source-file src="src/com/berriart/cordova/plugins/BaseGameActivity.java" target-dir="src/com/berriart/cordova/plugins/" />
+        <source-file src="src/com/berriart/cordova/plugins/GameHelper.java" target-dir="src/com/berriart/cordova/plugins/" />
+        <source-file src="src/com/berriart/cordova/plugins/GameHelperUtils.java" target-dir="src/com/berriart/cordova/plugins/" />
+    </platform>
+</plugin>
